@@ -22,6 +22,8 @@ class GameViewController: UIViewController {
                 scene.scaleMode = .aspectFill
                 
                 // Present the scene
+                scene.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
+                scene.physicsBody = SKPhysicsBody(edgeLoopFrom: scene.frame)
                 view.presentScene(scene)
             }
             
@@ -29,6 +31,7 @@ class GameViewController: UIViewController {
             
             view.showsFPS = true
             view.showsNodeCount = true
+            view.showsPhysics = true
         }
     }
 
